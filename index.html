@@ -18,7 +18,7 @@
     <button id="testEvent" onclick="testEvent()"> Test Event </button> </br>
     <button id="testEventWithArguments" onclick="testEventWithArguments()"> Test Event with Args</button> </br>
     <button id="testRevenue" onclick="testRevenue()"> Test Revenue </button> </br>
-    <button id="testCustomRevenue" onclick="testCustomRevenue()"> Test Revenue </button>
+    <button id="testCustomRevenue" onclick="testCustomRevenue()"> Test Custom Revenue </button>
   </div>
   <script type="text/javascript">
     function testEvent() {
@@ -35,16 +35,16 @@
         alert("no SingularInterface");
       }
    }
-   function testIAP() {
+   function testRevenue() {
       if (typeof(SingularInterface) !== 'undefined') {
-        Singular.event('__iap__', JSON.stringify({"pcc":"USD", "r":2.99, "a1":"bar", "a2":"boo", "is_revenue_event": true}));
+        SingularInterface.event("__iap__", JSON.stringify({"pcc":"USD", "r":2.99, "a1":"bar", "a2":"boo", "is_revenue_event": true}));
       } else {
         alert("no SingularInterface");
       }
    }
    function testCustomRevenue() {
       if (typeof(SingularInterface) !== 'undefined') {
-        Singular.event('customRevenue', JSON.stringify({"pcc":"USD", "r":2.99, "a1":"bar", "a2":"boo", "is_revenue_event": true}));
+        SingularInterface.event("customRevenue", JSON.stringify({"pcc":"USD", "r":2.99, "a1":"bar", "a2":"boo", "is_revenue_event": true}));
       } else {
         alert("no SingularInterface");
       }
