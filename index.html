@@ -17,11 +17,12 @@
   <div id="main">
     <button id="testEvent" onclick="testEvent()"> Test Event </button>
   </div>
-<script type="text/javascript">
-  function testEvent(){
-    SingularInterface.event('event');
-    SingularInterface.event('test', JSON.stringify({"a1":"bar", "a2":"boo", "a3":"baz"}));
-}
+  <script type="text/javascript">
+    function testEvent(){
+      SingularInterface.event('event');
+//       SingularInterface.event('test', JSON.stringify({"a1":"bar", "a2":"boo", "a3":"baz"}));
+      alert("event test");
+  }
 </script>
 </body>
 </html>
